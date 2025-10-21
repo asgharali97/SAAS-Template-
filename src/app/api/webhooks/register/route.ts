@@ -11,8 +11,11 @@ async function POST(req: Request) {
   }
 
   const headersPayload = headers();
+  //@ts-expect-error ignore
   const svix_id = headersPayload.get("svix-id");
+  //@ts-expect-error ignroe
   const svix_timestamp = headersPayload.get("svix-timestamp");
+  //@ts-expect-error ignroe
   const svix_signature = headersPayload.get("svix-signature");
 
   if(!svix_id || !svix_timestamp || !svix_signature){
